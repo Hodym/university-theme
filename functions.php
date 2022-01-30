@@ -47,13 +47,13 @@ function world_university_setup() {
 	add_theme_support( 'post-thumbnails' );
 
 	// This theme uses wp_nav_menu() in one location.
-	register_nav_menus(
-		array(
-			'primaryMenu' => esc_html__( 'Primary Menu Location', 'world-university' ),
-			'footerMenuExplore' => esc_html__( 'Explore Footer Location', 'world-university' ),
-			'footerMenuLearn' => esc_html__( 'Learn Footer Location', 'world-university' )
-		)
-	);
+	// register_nav_menus(
+	// 	array(
+	// 		'primaryMenu' => esc_html__( 'Primary Menu Location', 'world-university' ),
+	// 		'footerMenuExplore' => esc_html__( 'Explore Footer Location', 'world-university' ),
+	// 		'footerMenuLearn' => esc_html__( 'Learn Footer Location', 'world-university' )
+	// 	)
+	// );
 
 	/*
 		* Switch default core markup for search form, comment form, and comments
