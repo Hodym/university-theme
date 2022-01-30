@@ -49,7 +49,9 @@ function world_university_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'world-university' ),
+			'primaryMenu' => esc_html__( 'Primary Menu Location', 'world-university' ),
+			'footerMenuExplore' => esc_html__( 'Explore Footer Location', 'world-university' ),
+			'footerMenuLearn' => esc_html__( 'Learn Footer Location', 'world-university' )
 		)
 	);
 
