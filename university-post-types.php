@@ -10,10 +10,18 @@ function university_post_types() {
             'edit_item' => 'Edit Event',
             'all_items' => 'All Events',
             'singular_name' => 'Event'
-            ),
+        ),
+        'rewrite' => array('slug' => 'events'),
+        'has_archive' => true,
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-calendar',
+        'supports' => array(
+            'title',
+            'editor',
+            'excerpt'
+        )
+
     );
     register_post_type( 'event', $args );
 }
