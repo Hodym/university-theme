@@ -183,3 +183,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Taxonomy and custom types.
+ */
+require get_template_directory() . '/university-post-types.php';
