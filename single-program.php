@@ -22,6 +22,64 @@
 
       <div class="generic-content"><?php the_content(); ?></div>
 
+      <?php
+      $today = date_i18n('Y-m-d H:i:s');
+      $uniEventPost = new WP_Query(array(
+        'posts_per_page' => 2,
+        'post_type' => 'event',
+        'meta_key'  => 'date_event',
+        'orderby'   => 'meta_value',
+        'order'     => 'ASC',
+        'meta_query' => array(
+          array(
+            'key'     => 'date_event',
+            'compare' => '>',
+            'value'   => $today,
+            'type' => 'datetime'
+          ),
+          array(
+            'key' => 'related_programs',
+            'compare' => 'LIKE',
+            'value' => '"' . get_the_ID() . '"'
+          )
+        )
+
+      ));
+
+      if ($uniEventPost->have_posts()) {
+        echo '<hr class="section-break">';
+        echo '<h2 class="headline headline--medium">Upcoming ' . get_the_title() . ' Events</h2>';
+
+        while ($uniEventPost->have_posts()) {
+          $uniEventPost->the_post();
+          $date_event = strtotime(get_field('date_event')); ?>
+  
+          <div class="event-summary">
+            <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
+              <span class="event-summary__month">
+                <?= date_i18n("M", $date_event); ?>
+              </span>
+              <span class="event-summary__day"><?= date_i18n("d", $date_event); ?></span>
+            </a>
+            <div class="event-summary__content">
+              <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
+              <p>
+                <?php if (has_excerpt()) {
+                  echo get_the_excerpt();
+                } else {
+                  echo wp_trim_words(get_the_content(), 15);
+                } ?>
+                <a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a>
+              </p>
+            </div>
+          </div>
+  
+        <?php
+        }
+        wp_reset_postdata();
+      }
+      ?>
+
     </div>
     
   <?php }
