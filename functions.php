@@ -187,3 +187,8 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  * Taxonomy and custom types.
  */
 require get_template_directory() . '/university-post-types.php';
+
+/**
+ * Query with page Events.
+ */
+require get_template_directory() . '/inc/world-university-adjust-queries.php';
