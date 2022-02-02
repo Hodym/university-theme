@@ -17,24 +17,34 @@
       <h2 class="headline headline--small-plus t-center">Upcoming Events</h2>
 
       <?php
+      $today = date_i18n('Y-m-d H:i:s');
       $uniEventPost = new WP_Query(array(
-        'posts_per_page' => 2,
-        'post_type'      => 'event'
+        'posts_per_page' => -1,
+        'post_type' => 'event',
+        'meta_key'  => 'date_event',
+        'orderby'   => 'meta_value',
+        'order'     => 'ASC',
+        'meta_query' => array(
+          array(
+            'key'     => 'date_event',
+            'compare' => '>',
+            'value'   => $today,
+            'type' => 'datetime'
+          )
+        )
+
       ));
 
       while ($uniEventPost->have_posts()) {
-        $uniEventPost->the_post(); ?>
+        $uniEventPost->the_post();
+        $date_event = strtotime(get_field('date_event')); ?>
 
         <div class="event-summary">
           <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
             <span class="event-summary__month">
-              <?php
-                $eventDate = get_field('date_event');
-                $event_date = DateTime::createFromFormat('Y-m-d H:i:s', $eventDate);
-                echo $event_date->format('M');
-              ?>
+              <?= date_i18n("M", $date_event); ?>
             </span>
-            <span class="event-summary__day"><?= $event_date->format('d'); ?></span>
+            <span class="event-summary__day"><?= date_i18n("d", $date_event); ?></span>
           </a>
           <div class="event-summary__content">
             <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>

@@ -15,12 +15,13 @@ get_header(); ?>
 <div class="container container--narrow page-section">
 <?php
   while(have_posts()) {
-    the_post(); ?>
+    the_post();
+    $date_event = strtotime(get_field('date_event')); ?>
 
     <div class="event-summary">
       <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
-        <span class="event-summary__month"><?php the_time('M'); ?></span>
-        <span class="event-summary__day"><?php the_time('d'); ?></span>  
+        <span class="event-summary__month"><?= date_i18n("M", $date_event); ?></span>
+        <span class="event-summary__day"><?= date_i18n("d", $date_event); ?></span>  
       </a>
       <div class="event-summary__content">
         <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
