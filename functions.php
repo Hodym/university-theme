@@ -46,6 +46,10 @@ function world_university_setup() {
 		*/
 	add_theme_support( 'post-thumbnails' );
 
+	add_image_size('professorLandscape', 400, 260, true);
+	add_image_size('professorPortrait', 480, 650, true);
+	add_image_size('uniPageBanner', 1500, 350, true);
+
 	// This theme uses wp_nav_menu() in one location.
 	// register_nav_menus(
 	// 	array(

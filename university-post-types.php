@@ -1,10 +1,11 @@
 <?php
 
-function university_post_types() {
+function university_post_types()
+{
 
     // Event Post type
-    register_post_type( 'event', array(
-        'label'  => _x( 'Events', 'Post Type General Name', 'text_domain' ),
+    register_post_type('event', array(
+        'label'  => _x('Events', 'Post Type General Name', 'text_domain'),
         'labels' => array(
             'name' => 'Events',
             'add_new_item' => 'Add New Event',
@@ -25,8 +26,8 @@ function university_post_types() {
     ));
 
     // Program Post type
-    register_post_type( 'program', array(
-        'label'  => _x( 'Program', 'Post Type General Name', 'text_domain' ),
+    register_post_type('program', array(
+        'label'  => _x('Program', 'Post Type General Name', 'text_domain'),
         'labels' => array(
             'name' => 'Programs',
             'add_new_item' => 'Add New Program',
@@ -45,5 +46,25 @@ function university_post_types() {
         )
     ));
 
+    // Professor Post Type
+    register_post_type('professor', array(
+        'label'  => _x('Professor', 'Post Type General Name', 'text_domain'),
+        'labels' => array(
+            'name' => 'Professors',
+            'add_new_item' => 'Add New Professor',
+            'edit_item' => 'Edit Professor',
+            'all_items' => 'All Professors',
+            'singular_name' => 'Professor'
+        ),
+        'public' => true,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-welcome-learn-more',
+        'supports' => array(
+            'title',
+            'editor',
+            'thumbnail'
+        )
+    ));
+
 }
-add_action( 'init', 'university_post_types');
+add_action('init', 'university_post_types');
