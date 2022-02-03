@@ -201,3 +201,8 @@ require get_template_directory() . '/inc/world-university-adjust-queries.php';
  * Others content
  */
 require get_template_directory() . '/inc/world-university-page-banner.php';
+
+/**
+ * Maps JavaScript API
+ */
+require get_template_directory() . '/inc/uniGoogleMapApi.php';

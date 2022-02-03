@@ -44,3 +44,6 @@
 # Scalable Vector Graphics
 *.svg
 *.svgz
+
+# Maps JavaScript API
+uniGoogleMapApi.php
