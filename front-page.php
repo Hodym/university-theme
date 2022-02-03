@@ -36,30 +36,10 @@
       ));
 
       while ($uniEventPost->have_posts()) {
-        $uniEventPost->the_post();
-        $date_event = strtotime(get_field('date_event')); ?>
+        $uniEventPost->the_post(); 
 
-        <div class="event-summary">
-          <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
-            <span class="event-summary__month">
-              <?= date_i18n("M", $date_event); ?>
-            </span>
-            <span class="event-summary__day"><?= date_i18n("d", $date_event); ?></span>
-          </a>
-          <div class="event-summary__content">
-            <h5 class="event-summary__title headline headline--tiny"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h5>
-            <p>
-              <?php if (has_excerpt()) {
-                echo get_the_excerpt();
-              } else {
-                echo wp_trim_words(get_the_content(), 15);
-              } ?>
-              <a href="<?php the_permalink(); ?>" class="nu gray">Learn more</a>
-            </p>
-          </div>
-        </div>
+        get_template_part( 'template-parts/content', 'event' );
 
-      <?php
       }
       wp_reset_postdata();
       ?>
