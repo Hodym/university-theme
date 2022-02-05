@@ -25,6 +25,12 @@ function world_university_adjust_queries($query){
       )
     ));
   }
+
+  // Campus Query page
+  if (!is_admin() and is_post_type_archive('campus') and $query->is_main_query()) {
+    $query->set('posts_per_page', -1);
+  }
+
 }
 
 add_action('pre_get_posts', 'world_university_adjust_queries');

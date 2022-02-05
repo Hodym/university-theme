@@ -34,45 +34,6 @@
           </div>
         </div>
 
-      <!-- <div class="site-footer__col-two-three-group">
-
-        <?php // if (has_nav_menu('footerMenuExplore')) : ?>
-
-          <div class="site-footer__col-two">
-            <h3 class="headline headline--small">Explore</h3>
-
-            <?php
-            /* wp_nav_menu(
-              array(
-                'theme_location' => 'footerMenuExplore',
-                'menu_class'     => 'nav-list min-list',
-                'container'      => 'nav',
-              )
-            ); */
-            ?>
-
-          </div>
-        <?php //endif; ?>
-
-        <?php //if (has_nav_menu('footerMenuLearn')) : ?>
-
-          <div class="site-footer__col-three">
-            <h3 class="headline headline--small">Learn</h3>
-
-            <?php
-            /*wp_nav_menu(
-              array(
-                'theme_location' => 'footerMenuLearn',
-                'menu_class'     => 'nav-list min-list',
-                'container'      => 'nav',
-              )
-            );*/
-            ?>
-
-          </div>
-
-        <?php //endif; ?>
-
         <div class="site-footer__col-four">
           <h3 class="headline headline--small">Connect With Us</h3>
           <nav>
@@ -85,7 +46,6 @@
             </ul>
           </nav>
         </div>
-      </div> -->
 
     </div>
 </footer>

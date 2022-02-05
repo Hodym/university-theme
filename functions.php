@@ -153,6 +153,7 @@ function world_university_scripts() {
 
 	wp_enqueue_script('main-university-js', get_template_directory_uri() .'/js/scripts-bundled.js', NULL, _S_VERSION, true);
 	wp_enqueue_script( 'world-university-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'googleMap', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAEma_TDC70km86NbVjUcBH9odX9TaWOFE', NULL, _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
