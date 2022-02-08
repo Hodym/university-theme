@@ -192,3 +192,13 @@ require get_template_directory() . '/inc/world-university-page-banner.php';
  * Maps JavaScript API
  */
 require get_template_directory() . '/inc/uniGoogleMapApi.php';
+
+/**
+ * Custom Rest
+ */
+require get_template_directory() . '/inc/world-university-custom-rest.php';
+
+/**
+ * Search Route
+ */
+require get_template_directory() . '/inc/search-route.php';

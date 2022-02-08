@@ -48,6 +48,8 @@ function university_post_types()
 
     // Professor Post Type
     register_post_type('professor', array(
+        'show_in_rest' => true,
+        'rest_base' => 'professors',
         'label'  => _x('Professor', 'Post Type General Name', 'text_domain'),
         'labels' => array(
             'name' => 'Professors',
