@@ -40,10 +40,7 @@ function university_post_types()
         'public' => true,
         'menu_position' => 5,
         'menu_icon' => 'dashicons-awards',
-        'supports' => array(
-            'title',
-            'editor'
-        )
+        'supports' => array('title')
     ));
 
     // Professor Post Type
