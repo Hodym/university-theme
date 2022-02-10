@@ -1,24 +1,15 @@
 <?php
-/**
- * The template for displaying 404 pages (not found)
- *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package World_University
- */
 
 get_header();
+pageBanner(array(
+  'title' => 'Oops! That page can&rsquo;t be found.',
+  'subtitle' => 'It looks like nothing was found at this location. Maybe try one of the links below or a search?'
+));
 ?>
 
-	<main id="primary" class="site-main">
-
-		<section class="error-404 not-found">
-			<header class="page-header">
-				<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'world-university' ); ?></h1>
-			</header><!-- .page-header -->
+	<div class="container container--narrow page-section">
 
 			<div class="page-content">
-				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'world-university' ); ?></p>
 
 					<?php
 					get_search_form();
@@ -52,9 +43,8 @@ get_header();
 					?>
 
 			</div><!-- .page-content -->
-		</section><!-- .error-404 -->
 
-	</main><!-- #main -->
+	</div>
 
 <?php
 get_footer();

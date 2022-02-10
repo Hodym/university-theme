@@ -202,3 +202,40 @@ require get_template_directory() . '/inc/world-university-custom-rest.php';
  * Search Route
  */
 require get_template_directory() . '/inc/search-route.php';
+
+// Redirect subscriber accounts out of admin and onto homepage
+function redirectSubsToFrontend() {
+  $ourCurrentUser = wp_get_current_user();
+
+  if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 'subscriber') {
+    wp_redirect(site_url('/'));
+    exit;
+  }
+}
+add_action('admin_init', 'redirectSubsToFrontend');
+
+function noSubsAdminBar() {
+  $ourCurrentUser = wp_get_current_user();
+
+  if (count($ourCurrentUser->roles) == 1 AND $ourCurrentUser->roles[0] == 'subscriber') {
+    show_admin_bar(false);
+  }
+}
+add_action('wp_loaded', 'noSubsAdminBar');
+
+// Customize Login Screen
+function ourHeaderUrl() {
+  return esc_url(site_url('/'));
+}
+add_filter('login_headerurl', 'ourHeaderUrl');
+
+function ourLoginCSS() {
+  wp_enqueue_style('university_main_styles', get_stylesheet_uri());
+  wp_enqueue_style('custom-google-fonts', '//fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:100,300,400,400i,700,700i');
+}
+add_action('login_enqueue_scripts', 'ourLoginCSS');
+
+function ourLoginTitle() {
+  return get_bloginfo('name');
+}
+add_filter('login_headertitle', 'ourLoginTitle');

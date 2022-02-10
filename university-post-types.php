@@ -5,6 +5,8 @@ function university_post_types()
 
     // Event Post type
     register_post_type('event', array(
+        'capability_type' => 'event',
+        'map_meta_cap' => true,
         'label'  => _x('Events', 'Post Type General Name', 'text_domain'),
         'labels' => array(
             'name' => 'Events',
@@ -67,6 +69,8 @@ function university_post_types()
 
     // Campus Post type
     register_post_type('campus', array(
+        'capability_type' => 'campus',
+        'map_meta_cap' => true,
         'supports' => array('title', 'editor', 'excerpt'),
         'rewrite' => array('slug' => 'campuses'),
         'has_archive' => true,
