@@ -47,3 +47,6 @@
 
 # Maps JavaScript API
 uniGoogleMapApi.php
+
+# Gulp scripts
+scripts-bundled.js

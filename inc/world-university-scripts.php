@@ -13,7 +13,8 @@ function world_university_scripts() {
 	wp_enqueue_script( 'googleMap', 'https://maps.googleapis.com/maps/api/js', NULL, _S_VERSION, true );
 	
 	wp_localize_script('main-university-js', 'universityData', array(
-		'root_url' => get_site_url()
+		'root_url' => get_site_url(),
+		'nonce' => wp_create_nonce('wp_rest')
 	));
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
