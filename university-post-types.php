@@ -87,6 +87,8 @@ function university_post_types()
 
     // Notes Post Type
     register_post_type('note', array(
+        'capability_type' => 'note',
+        'map_meta_cap' => true,
         'show_in_rest' => true,
         'label'  => _x('Note', 'Post Type General Name', 'text_domain'),
         'labels' => array(
