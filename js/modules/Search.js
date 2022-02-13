@@ -145,6 +145,6 @@ class Search {
   `);
   }
 
-}7
+}
 
 export default Search;

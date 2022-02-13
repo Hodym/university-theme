@@ -203,6 +203,11 @@ require get_template_directory() . '/inc/world-university-custom-rest.php';
  */
 require get_template_directory() . '/inc/search-route.php';
 
+/**
+ * Like Route
+ */
+require get_template_directory() . '/inc/like-route.php';
+
 // Redirect subscriber accounts out of admin and onto homepage
 function redirectSubsToFrontend() {
   $ourCurrentUser = wp_get_current_user();
