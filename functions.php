@@ -268,3 +268,8 @@ add_filter('wp_insert_post_data', 'uniNotePrivate', 10, 2);
 add_filter( 'private_title_format', function ( $format ) {
     return '%s';
 } );
+
+/**
+ * Slider
+ */
+require get_template_directory() . '/inc/university-slider.php';

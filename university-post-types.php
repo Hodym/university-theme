@@ -120,5 +120,21 @@ function university_post_types()
         'supports' => array('title')
     ));
 
+    // Slider Post Type
+    register_post_type('slider', array(
+        'label'  => _x('Slider', 'Post Type General Name', 'text_domain'),
+        'labels' => array(
+            'name' => 'Slider',
+            'add_new_item' => 'Add New Slider',
+            'edit_item' => 'Edit Slider',
+            'all_items' => 'All Slider',
+            'singular_name' => 'Slider'
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'menu_icon' => 'dashicons-image-flip-horizontal',
+        'supports' => array('title')
+    ));
+
 }
 add_action('init', 'university_post_types');

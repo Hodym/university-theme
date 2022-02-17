@@ -31,6 +31,12 @@ function world_university_adjust_queries($query){
     $query->set('posts_per_page', -1);
   }
 
+    // Slider Query page
+    if (!is_admin() and is_post_type_archive('slider') and $query->is_main_query()) {
+      $query->set('orderby', 'ID');
+      $query->set('order', 'DESC');
+    }
+
 }
 
 add_action('pre_get_posts', 'world_university_adjust_queries');
